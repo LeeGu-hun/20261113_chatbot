@@ -1,0 +1,5 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="csrf" content="{{ csrf }}"><title>사내 매뉴얼 챗봇</title>
+<link rel="stylesheet" href="/static/style.css"></head><body>
+<header><a href="/" class="brand">🏢 통합 업무 챗봇</a><nav>{% if user %}<span>{{ user.display_name }} · {{ user.department }}</span>{% if user.role == 'admin' %}<a href="/admin">관리자</a>{% endif %}<form method="post" action="/logout"><input type="hidden" name="csrf" value="{{ csrf }}"><button type="submit" class="secondary">로그아웃</button></form>{% endif %}</nav></header>
+<main>{% block content %}{% endblock %}</main></body></html>

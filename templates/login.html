@@ -1,0 +1,3 @@
+{% extends 'base.html' %}{% block content %}<section class="login panel"><h1>직원 로그인</h1><p>사내 매뉴얼 기반 업무 지원 시스템</p>
+{% if error %}<p class="error">{{ error }}</p>{% endif %}
+<form method="post" action="/login"><input type="hidden" name="csrf" value="{{ csrf }}"><label>아이디<input name="username" autocomplete="username" required></label><label>비밀번호<input name="password" type="password" autocomplete="current-password" required></label><button>로그인</button></form></section>{% endblock %}
